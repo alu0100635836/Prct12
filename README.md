@@ -1,29 +1,25 @@
 # Matrixfamily
 
-TODO: Write a gem description
+Nuestra jerarquía de clases para implementar las matrices será:
+- Una matriz madre
+- Dos matrices hijas (Densa y Dispersa)
 
-## Installation
+## Enunciado
+	1.- Utilizar bundle para crear la estructura estándar de una gema.
+	Véanse railcast: gems with bundler y el blog polishing rubies
+		bundle gem nombre
+	2.- Partiendo de la implementación que se ha realizado en prácticas anteriores para las Fracciones y las Matrices reorganizar el código.
+	3.- Escribir un conjunto de pruebas unitarias (Unit Testing)
+		test/tc_nombre.rb
+	4.- Escribir un fichero de espectativas de comportamiento (TDD)
+		spec/nombre_spec.rb
+	5.- Realizar un seguimiento continuo de las pruebas (Continuous Testing)
+		guard
+	6.- Comprobar el correcto funcionamiento en distintas plataformas (Continuous Integration)
+		travis
+	7.- Indique la URL del repositorio en el que se ha desarrollado.
 
-Add this line to your application's Gemfile:
+## Desarrollo
+	Alejandro Morales Pérez
+	Daniel Mateos Peláez
 
-    gem 'matrixfamily'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install matrixfamily
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
