@@ -102,7 +102,7 @@ describe Matrizdensa do
                 @Matrizdensa6 = Matrizdensa.new([Fraccion.new(1,5),Fraccion.new(5,3)],[Fraccion.new(5,4),Fraccion.new(6,9)])
         end
 	
-        it "Comprueba que la Matriz_densa es cuadrada" do
+        it "Comprueba que la Matrizdensa es cuadrada" do
                 expect { Matrizdensa.new([2,3,3],[3,4],[1,2,3]) }.to raise_error
                 expect { Matrizdensa.new([2,3,3],[1,2,3]) }.to raise_error
         end
@@ -232,8 +232,6 @@ describe Matriz_dispersa do
                 @d = Matriz_dispersa.new(0 => {0 => 3, 2 => 2}, 2 => {0 => 1, 2 => 2})
                 @e = Matriz_dispersa.new(0 => {1 => 2, 2 => 1}, 1 => {1 => 3}, 3 => {0 => 1})
                 @f = Matriz_dispersa.new(1 => {1 => 1, 2 => 3}, 2 => {0 => 2})
-                #@g = @Matriz_frac * @Matriz_frac2
-                #@g[0][0].should eq(Fraccion.new(2,3))
                 @Matriz_dispersa3 = @a * @b
                 @Matriz_dispersa3[0][0].should eq(16)
                 @Matriz_dispersa3[0][1].should eq(21)

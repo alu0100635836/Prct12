@@ -102,7 +102,7 @@ describe Matrizdensa do
                 @Matrizdensa6 = Matrizdensa.new([Fraccion.new(1,5),Fraccion.new(5,3)],[Fraccion.new(5,4),Fraccion.new(6,9)])
         end
 	
-        it "Comprueba que la Matriz_densa es cuadrada" do
+        it "Comprueba que la Matrizdensa es cuadrada" do
                 expect { Matrizdensa.new([2,3,3],[3,4],[1,2,3]) }.to raise_error
                 expect { Matrizdensa.new([2,3,3],[1,2,3]) }.to raise_error
         end
@@ -182,78 +182,78 @@ describe Matrizdensa do
         end
 end
 
-describe Matriz_dispersa do
+describe Matrizdispersa do
 
         before :each do
-                @Matriz_dispersa = Matriz_dispersa.new(100 => {100 => 1, 500 => 200}, 20000 => { 1000 => 3, 9000 => 200})
-                @Matriz_dispersa2 = Matriz_dispersa.new(100 => {100 => 2, 50 => 3}, 200 => { 30 => 10})
-                @Matriz_frac = Matriz_dispersa.new(0 => {0 => Fraccion.new(1,3), 1 => Fraccion.new(1,3)}, 2 => {0 => Fraccion.new(1,3), 2 => Fraccion.new(1,3)})
-                @Matriz_frac2 = Matriz_dispersa.new(0 => {0 => Fraccion.new(6,3), 1 => Fraccion.new(5,3)}, 2 => {0 => Fraccion.new(5,3), 2 => Fraccion.new(2,3)})
+                @Matrizdispersa = Matrizdispersa.new(100 => {100 => 1, 500 => 200}, 20000 => { 1000 => 3, 9000 => 200})
+                @Matrizdispersa2 = Matrizdispersa.new(100 => {100 => 2, 50 => 3}, 200 => { 30 => 10})
+                @Matrizfrac = Matrizdispersa.new(0 => {0 => Fraccion.new(1,3), 1 => Fraccion.new(1,3)}, 2 => {0 => Fraccion.new(1,3), 2 => Fraccion.new(1,3)})
+                @Matrizfrac2 = Matrizdispersa.new(0 => {0 => Fraccion.new(6,3), 1 => Fraccion.new(5,3)}, 2 => {0 => Fraccion.new(5,3), 2 => Fraccion.new(2,3)})
         end
 	
         it "Accede a los elementos de la matriz" do
-                @Matriz_dispersa[0][0].should eq(0)
-                @Matriz_dispersa[100][100].should eq(1)
-                @Matriz_dispersa[100][500].should eq(200)
+                @Matrizdispersa[0][0].should eq(0)
+                @Matrizdispersa[100][100].should eq(1)
+                @Matrizdispersa[100][500].should eq(200)
         end
 
         it "Suma una matriz dispersa con otra" do
-                @Matriz_dispersa3 = @Matriz_dispersa + @Matriz_dispersa2
-                @Matriz_dispersa3[100][100].should eq(3)
-                @Matriz_dispersa3[100][50].should eq(3)
-                @Matriz_dispersa3[100][500].should eq(200)
-                @Matriz_dispersa3[200][30].should eq(10)
-                @Matriz_dispersa3[20000][1000].should eq(3)
-                @Matriz_dispersa3[20000][9000].should eq(200)
-                @Matriz_dispersa4 = @Matriz_frac + @Matriz_frac2
-                @Matriz_dispersa4[0][0].should eq(Fraccion.new(7,3))
-                @Matriz_dispersa4[0][1].should eq(Fraccion.new(2,1))
-                @Matriz_dispersa4[2][0].should eq(Fraccion.new(2,1))
+                @Matrizdispersa3 = @Matrizdispersa + @Matrizdispersa2
+                @Matrizdispersa3[100][100].should eq(3)
+                @Matrizdispersa3[100][50].should eq(3)
+                @Matrizdispersa3[100][500].should eq(200)
+                @Matrizdispersa3[200][30].should eq(10)
+                @Matrizdispersa3[20000][1000].should eq(3)
+                @Matrizdispersa3[20000][9000].should eq(200)
+                @Matrizdispersa4 = @Matrizfrac + @Matrizfrac2
+                @Matrizdispersa4[0][0].should eq(Fraccion.new(7,3))
+                @Matrizdispersa4[0][1].should eq(Fraccion.new(2,1))
+                @Matrizdispersa4[2][0].should eq(Fraccion.new(2,1))
         end
 
         it "Resta una matriz dispersa con otra" do
-                @Matriz_dispersa3 = @Matriz_dispersa - @Matriz_dispersa2
-                @Matriz_dispersa3[100][100].should eq(-1)
-                @Matriz_dispersa3[100][50].should eq(3)
-                @Matriz_dispersa3[100][500].should eq(200)
-                @Matriz_dispersa3[200][30].should eq(10)
-                @Matriz_dispersa3[20000][1000].should eq(3)
-                @Matriz_dispersa3[20000][9000].should eq(200)
-                @Matriz_dispersa4 = @Matriz_frac - @Matriz_frac2
-                @Matriz_dispersa4[0][0].should eq(Fraccion.new(-5,3))
-                @Matriz_dispersa4[0][1].should eq(Fraccion.new(-4,3))
-                @Matriz_dispersa4[2][0].should eq(Fraccion.new(-4,3))
+                @Matrizdispersa3 = @Matrizdispersa - @Matrizdispersa2
+                @Matrizdispersa3[100][100].should eq(-1)
+                @Matrizdispersa3[100][50].should eq(3)
+                @Matrizdispersa3[100][500].should eq(200)
+                @Matrizdispersa3[200][30].should eq(10)
+                @Matrizdispersa3[20000][1000].should eq(3)
+                @Matrizdispersa3[20000][9000].should eq(200)
+                @Matrizdispersa4 = @Matrizfrac - @Matrizfrac2
+                @Matrizdispersa4[0][0].should eq(Fraccion.new(-5,3))
+                @Matrizdispersa4[0][1].should eq(Fraccion.new(-4,3))
+                @Matrizdispersa4[2][0].should eq(Fraccion.new(-4,3))
         end
 
         it "Multiplica una matriz dispersa con otra" do
-                @a = Matriz_dispersa.new(0 => {0 => 7, 1 => 1}, 2 => {0 => 2, 2 => 3})
-                @b = Matriz_dispersa.new(0 => {0 => 2, 1 => 3}, 1 => {0 => 2}, 2 => {2 => 1})
-                @c = Matriz_dispersa.new(0 => {0 => 1}, 1 => {1 => 2}, 2 => {2 => 2})
-                @d = Matriz_dispersa.new(0 => {0 => 3, 2 => 2}, 2 => {0 => 1, 2 => 2})
-                @e = Matriz_dispersa.new(0 => {1 => 2, 2 => 1}, 1 => {1 => 3}, 3 => {0 => 1})
-                @f = Matriz_dispersa.new(1 => {1 => 1, 2 => 3}, 2 => {0 => 2})
-                @Matriz_dispersa3 = @a * @b
-                @Matriz_dispersa3[0][0].should eq(16)
-                @Matriz_dispersa3[0][1].should eq(21)
-                @Matriz_dispersa3[2][0].should eq(4)
-                @Matriz_dispersa3[2][1].should eq(6)
-                @Matriz_dispersa3[2][2].should eq(3)
-                @Matriz_dispersa4 = @c * @d
-                @Matriz_dispersa4[0][0].should eq(3)
-                @Matriz_dispersa4[0][2].should eq(2)
-                @Matriz_dispersa4[2][0].should eq(2)
-                @Matriz_dispersa4[2][2].should eq(4)
-                @Matriz_dispersa4 = @e * @f
-                @Matriz_dispersa4[0][0].should eq(2)
-                @Matriz_dispersa4[0][1].should eq(2)
-                @Matriz_dispersa4[0][2].should eq(6)
-                @Matriz_dispersa4[1][1].should eq(3)
-                @Matriz_dispersa4[1][2].should eq(9)
+                @a = Matrizdispersa.new(0 => {0 => 7, 1 => 1}, 2 => {0 => 2, 2 => 3})
+                @b = Matrizdispersa.new(0 => {0 => 2, 1 => 3}, 1 => {0 => 2}, 2 => {2 => 1})
+                @c = Matrizdispersa.new(0 => {0 => 1}, 1 => {1 => 2}, 2 => {2 => 2})
+                @d = Matrizdispersa.new(0 => {0 => 3, 2 => 2}, 2 => {0 => 1, 2 => 2})
+                @e = Matrizdispersa.new(0 => {1 => 2, 2 => 1}, 1 => {1 => 3}, 3 => {0 => 1})
+                @f = Matrizdispersa.new(1 => {1 => 1, 2 => 3}, 2 => {0 => 2})
+                @Matrizdispersa3 = @a * @b
+                @Matrizdispersa3[0][0].should eq(16)
+                @Matrizdispersa3[0][1].should eq(21)
+                @Matrizdispersa3[2][0].should eq(4)
+                @Matrizdispersa3[2][1].should eq(6)
+                @Matrizdispersa3[2][2].should eq(3)
+                @Matrizdispersa4 = @c * @d
+                @Matrizdispersa4[0][0].should eq(3)
+                @Matrizdispersa4[0][2].should eq(2)
+                @Matrizdispersa4[2][0].should eq(2)
+                @Matrizdispersa4[2][2].should eq(4)
+                @Matrizdispersa4 = @e * @f
+                @Matrizdispersa4[0][0].should eq(2)
+                @Matrizdispersa4[0][1].should eq(2)
+                @Matrizdispersa4[0][2].should eq(6)
+                @Matrizdispersa4[1][1].should eq(3)
+                @Matrizdispersa4[1][2].should eq(9)
         end
 	
         it "Opera una matriz dispersa con una densa" do
                 @densa = Matrizdensa.new([1,2,4],[4,3,2],[7,6,4])
-                @dispersa = Matriz_dispersa.new(1 => {1 => 1, 2 => 3}, 2 => {0 => 2})
+                @dispersa = Matrizdispersa.new(1 => {1 => 1, 2 => 3}, 2 => {0 => 2})
                 @suma = @densa + @dispersa
                 @suma[0][0].should eq(1)
                 @suma[0][1].should eq(2)
@@ -278,12 +278,12 @@ describe Matriz_dispersa do
         end
 
         it "Halla el maximo de una matriz" do
-                max = @Matriz_dispersa.maximo
+                max = @Matrizdispersa.maximo
                 max.should eq(200)
         end
 
         it "Halla el minimo de una matriz" do
-                min = @Matriz_dispersa.minimo
+                min = @Matrizdispersa.minimo
                 min.should eq(1)
         end
 end
