@@ -3,7 +3,6 @@ require "matrixfamily/matriz.rb"
 require "matrixfamily/matrizdensa.rb"
 require "matrixfamily/matrizdispersa.rb"
 require "matrixfamily/fraccion.rb"
-require "matrixfamily/gcd.rb"
 
 module Matrixfamily
   # Your code goes here...

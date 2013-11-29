@@ -1,4 +1,4 @@
-require "matrixfamily/version"
+require "matrixfamily/version.rb"
 require "matrixfamily/matriz.rb"
 require "matrixfamily/matrizdensa.rb"
 require "matrixfamily/matrizdispersa.rb"
