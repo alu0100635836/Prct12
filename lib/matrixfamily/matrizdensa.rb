@@ -57,4 +57,20 @@ class Matrizdensa < Matriz
 		[self, other]
 	end
 
+#ENCONTRAR     
+    def encontrar
+      if @matriz.is_a? Array then
+      
+      encontrar = @matriz[0][0]
+      
+      	for i in 0...@dimension
+        	for j in 0...@dimension
+        		if(yield(@matriz[i][j]))
+          			return i, j
+        		end
+      		end
+      	end
+    	return nil
+  	end
+
 end

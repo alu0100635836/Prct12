@@ -180,6 +180,10 @@ describe Matrizdensa do
                 @Matrizdensa7[0][0].should_not eq(Fraccion.new(12,10)) ####################
                 @Matrizdensa8[0][0].should_not eq(Fraccion.new(30,10)) ####################
         end
+        
+        it "Pasar pos en la que un elemento al cuadrado es mayor que 6" do
+      			((@Matrizdensa1.encontrar {|e| e*e > 6}).should == [1,0])
+    	end
 end
 
 describe Matrizdispersa do
@@ -286,4 +290,5 @@ describe Matrizdispersa do
                 min = @Matrizdispersa.minimo
                 min.should eq(1)
         end
+
 end
