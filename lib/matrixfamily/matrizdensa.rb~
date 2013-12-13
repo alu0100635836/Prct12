@@ -58,7 +58,7 @@ class Matrizdensa < Matriz
 	end
 
 #ENCONTRAR     
-    def encontrar	
+    def encontrar
       if @matriz.is_a? Array then
       
       encontrar = @matriz[0][0]
