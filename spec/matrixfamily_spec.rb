@@ -292,3 +292,30 @@ describe Matrizdispersa do
         end
 
 end
+
+describe "DSL" do
+
+    it "suma" do
+        @sum = MatrizDSL.new("suma") do
+            operand [[1,2,3],[4,5,6],[7,8,9]]
+            operand [[2,2,2],[4,4,4],[6,6,6]]
+        end
+        @sum.operar.should eq([[3,4,5],[8,9,10],[13,14,15]])
+    end
+
+    it "resta" do
+        @sum = MatrizDSL.new("resta") do
+            operand [[1,2,3],[4,5,6],[7,8,9]]
+            operand [[8,8,8],[10,10,10],[2,2,2]]
+        end
+        @sum.operar.should eq([[-7,-6,-5],[-6,-5,-4],[5,6,7]])
+    end
+
+    it "multiplicacion" do
+        @sum = MatrizDSL.new("multiplicacion") do
+            operand [[1,2,3],[4,5,6],[7,8,9]]
+            operand [[4,4,4],[7,7,7],[10,10,10]]
+        end
+        @sum.operar.should eq([[48,48,48],[111,111,111],[174,174,174]])
+    end
+end

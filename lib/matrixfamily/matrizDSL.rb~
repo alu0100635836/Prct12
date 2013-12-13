@@ -4,7 +4,7 @@ class MatrizDSL
 
   def initialize(operacion = "", &block)
     @operacion = operacion
-    @operandos = []
+    @mats = []
     if block_given?
       if block.arity == 1
         yield self
@@ -19,7 +19,7 @@ class MatrizDSL
     b = mat[1]
     c = mat[2]
     m = Matrizdensa.new(a,b,c)
-    @operandos << m
+    @mats << m
   end
 
   def to_s
@@ -31,11 +31,11 @@ class MatrizDSL
   def operar
 
     if @operacion == "suma" then
-      a = @operandos[0] + @operandos[1]
+      a = @mats[0] + @mats[1]
     elsif @operacion == "resta" then
-      a = @operandos[0] - @operandos[1]
+      a = @mats[0] - @mats[1]
     elsif @operacion == "multiplicacion" then
-      a = @operandos[0] * @operandos[1]
+      a = @mats[0] * @mats[1]
     end
   end
 end
